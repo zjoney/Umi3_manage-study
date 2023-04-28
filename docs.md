@@ -14,7 +14,7 @@
 -   新建一个空的文件夹作为项目目录，并在目录下执行
 -   [python-380](https://www.python.org/downloads/release/python-380/)
 
-```
+```js
 //npm config set python "C:/Python38/python.exe"
 yarn create umi
 ```
@@ -23,7 +23,7 @@ yarn create umi
 
 -   我们已经为你生成了一个完整的开发框架，提供了涵盖中后台开发的各类功能和坑位，下面是整个项目的目录结构。
 
-```
+```js
 ├─config # umi 配置，包含路由，构建等配置
 ├─mock   # 本地模拟数据
 ├─public
@@ -54,7 +54,7 @@ yarn create umi
 
 #### 1.1.3 本地开发
 
-```
+```js
 npm install
 npm run dev
 ```
