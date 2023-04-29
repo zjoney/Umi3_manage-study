@@ -67,7 +67,7 @@ npm run dev
 
 config\proxy.ts
 
-```
+```js
 export default {
   dev: {
     '/api/': {
@@ -82,7 +82,7 @@ export default {
 
 src\services\API.d.ts
 
-```
+```js
   export interface LoginStateType {
     status?: 'ok' | 'error';
     type?: string;
@@ -94,7 +94,7 @@ src\services\API.d.ts
 
 src\pages\user\login\index.tsx
 
-```
+```js
   const handleSubmit = async (values: LoginParamsType) => {
     setSubmitting(true);
     try {
@@ -120,7 +120,7 @@ src\pages\user\login\index.tsx
 
 src\app.tsx
 
-```
+```js
 export const request: RequestConfig = {
   errorHandler,
 +   headers: {
@@ -133,7 +133,7 @@ export const request: RequestConfig = {
 
 src\services\user.ts
 
-```
+```js
 export async function queryCurrent() {
   return request<API.CurrentUser>('/api/currentUser',
 +  {
@@ -149,7 +149,7 @@ export async function queryCurrent() {
 
 src\services\API.d.ts
 
-```
+```js
   export interface CurrentUser {
     avatar?: string;
 +    username?: string;
@@ -170,7 +170,7 @@ src\services\API.d.ts
 
 src\components\RightContent\AvatarDropdown.tsx
 
-```
+```js
 /**
  * 退出登录，并且将当前的 url 保存
  */
@@ -215,7 +215,7 @@ export default AvatarDropdown;
 
 config\routes.ts
 
-```
+```js
   {
     path: '/admin',
     name: 'admin',
@@ -236,7 +236,7 @@ config\routes.ts
 
 src\locales\zh-CN\menu.ts
 
-```
+```js
 export default {
   'menu.welcome': '欢迎',
   'menu.more-blocks': '更多区块',
@@ -249,7 +249,7 @@ export default {
 
 src\pages\admin\user\data.d.ts
 
-```
+```js
 export interface TableListItem {
 +  id?:string;
 +  username?:string;
