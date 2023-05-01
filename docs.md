@@ -279,7 +279,7 @@ export interface TableListParams {
 
 src\pages\admin\user\service.ts
 
-```
+```js
 +export async function removeUser(params: { key: string[] }) {
   return request('/api/user', {
 +   method: 'DELETE',
@@ -312,7 +312,7 @@ src\pages\admin\user\service.ts
 
 src\pages\admin\user\index.tsx
 
-```
+```js
 import { PlusOutlined } from '@ant-design/icons';
 +import { Button, message, Drawer ,Avatar} from 'antd';
 import React, { useState, useRef } from 'react';
@@ -586,7 +586,7 @@ export default TableList;
 
 src\locales\zh-CN\pages.ts
 
-```
+```js
   'pages.admin.subPage.title': ' 这个页面只有 admin 权限才能查看',
 + 'pages.admin.user.createForm.newUser': '增加用户',
 ```
@@ -595,7 +595,7 @@ src\locales\zh-CN\pages.ts
 
 src\pages\admin\user\components\CreateForm.tsx
 
-```
+```js
 const CreateForm: React.FC<CreateFormProps> = (props) => {
   const { modalVisible, onCancel } = props;
   const intl = useIntl();
@@ -622,7 +622,7 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
 
 src\pages\admin\user\components\UpdateForm.tsx
 
-```
+```js
 import React from 'react';
 import { Modal } from 'antd';
 +import ProForm,{ProFormText} from '@ant-design/pro-form';
@@ -679,7 +679,7 @@ export default UpdateForm;
 
 ### 1.1 安装
 
-```
+```js
 cnpm i express body-parser mongoose jsonwebtoken http-status-codes -S
 ```
 
@@ -687,7 +687,7 @@ cnpm i express body-parser mongoose jsonwebtoken http-status-codes -S
 
 ### 2.1 app.js
 
-```
+```js
 let express = require("express");
 let bodyParser = require("body-parser");
 let user = require("./routes/user");
@@ -704,7 +704,7 @@ app.listen(3000, () => {
 
 config.js
 
-```
+```js
 module.exports = {
     secret: 'pro5',
     dbUrl: "mongodb://localhost:27017/pro5"
@@ -715,7 +715,7 @@ module.exports = {
 
 model.js
 
-```
+```js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let config = require('./config');
@@ -748,7 +748,7 @@ module.exports = {
 
 routes\user.js
 
-```
+```js
 let express=require('express');
 let {UserModel} = require('../model');
 let jwt = require('jsonwebtoken');
@@ -808,7 +808,7 @@ module.exports = router;
 
 routes\user.js
 
-```
+```js
 let express=require('express');
 let {UserModel} = require('../model');
 let jwt = require('jsonwebtoken');
@@ -916,7 +916,7 @@ module.exports = router;
 
 checkLogin.js
 
-```
+```js
 let config = require('./config');
 let jwt = require('jsonwebtoken');
 let { UNAUTHORIZED } = require( "http-status-codes");
@@ -943,7 +943,7 @@ module.exports = checkLogin;
 
 checkPermission.js
 
-```
+```js
 let config = require('./config');
 let jwt = require('jsonwebtoken');
 let { FORBIDDEN } = require( "http-status-codes");
@@ -963,7 +963,7 @@ module.exports = checkPermission;
 
 ### 4.3 routes\user.js
 
-```
+```js
 let express=require('express');
 let {UserModel} = require('../model');
 let jwt = require('jsonwebtoken');
